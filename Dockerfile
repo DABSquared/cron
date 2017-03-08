@@ -13,3 +13,5 @@ RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["cron", "-f"]
+
+HEALTHCHECK CMD exit 0
