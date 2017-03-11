@@ -1,4 +1,4 @@
-FROM dabsquared/php7-fpm
+FROM dabsquared/php-fpm
 
 LABEL maintainer "dbrooks@dabsquared.com"
 
