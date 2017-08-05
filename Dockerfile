@@ -18,7 +18,7 @@ RUN set -ex \
     /etc/pam.d/cron
 
 COPY start-cron /usr/sbin
-
+RUN chmod +x /usr/sbin/start-cron
 CMD ["start-cron"]
 
 HEALTHCHECK CMD exit 0
