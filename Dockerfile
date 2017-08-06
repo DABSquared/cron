@@ -13,9 +13,6 @@ RUN set -ex \
 # Create the log file to be able to run tail
 RUN touch /var/log/cron.log
 
-COPY start-cron /usr/sbin
-RUN chmod +x /usr/sbin/start-cron
-
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
