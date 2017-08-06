@@ -15,4 +15,9 @@ RUN touch /var/log/cron.log
 
 COPY start-cron /usr/sbin
 RUN chmod +x /usr/sbin/start-cron
-CMD ["start-cron"]
+
+COPY docker-entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
+CMD cron && tail -f /var/log/cron.log

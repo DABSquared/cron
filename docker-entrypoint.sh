@@ -14,4 +14,4 @@ if [ "$WAIT_FOR_PHP" == "true" ]; then
     done
 fi
 
-CMD cron && tail -f /var/log/cron.log
+exec "$@"
