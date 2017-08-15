@@ -25,7 +25,7 @@ else
 fi
 
 if [ "$CRONTAB_CONF" ]; then
-    cp $CRONTAB_CONF /etc/cron.d/symfony
+    cp /var/www/symfony/$CRONTAB_CONF /etc/cron.d/symfony
     sed -i.bak 's/symfony_app_name/'"$symfony_app_name"'/g' /etc/cron.d/symfony
     sed -i.bak 's/ENVIRONMENT/'"$ENVIRONMENT"'/g' /etc/cron.d/symfony
     rm -rf /etc/cron.d/symfony.bak
