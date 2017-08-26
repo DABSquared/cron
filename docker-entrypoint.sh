@@ -20,7 +20,7 @@ else
     ssh-add ~/.ssh/id_rsa
     [[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
     cd /var/www
-    git clone "$GIT_REPO" symfony
+    git clone --depth 1 "$GIT_REPO" symfony
     /setup.sh
 fi
 
