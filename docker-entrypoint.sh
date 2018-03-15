@@ -14,7 +14,9 @@ if [ "$CRONTAB_CONF" ]; then
     chmod 0644 /etc/cron.d/symfony
 fi
 
+touch /var/log/cron.log
 printenv | sed 's/^\(.*\)$/export "\1"/g' > /root/project_env.sh
 chmod a+x /root/project_env.sh
+cron
 
 exec "$@"
