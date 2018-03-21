@@ -15,7 +15,7 @@ if [ "$CRONTAB_CONF" ]; then
 fi
 
 touch /var/log/cron.log
-printenv | sed 's/^\(.*\)$/export "\1"/g' > /root/project_env.sh
+printenv | sed '/^\s*$/d' | sed 's/^\(.*\)$/export "\1"/g' > /root/project_env.sh
 chmod a+x /root/project_env.sh
 cron
 
